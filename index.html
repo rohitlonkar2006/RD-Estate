@@ -6,72 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RD-Estate | Premium Land Plotting Services in Pune</title>
   <meta name="description"
-    content="Trusted land plotting specialists in Pune with 10+ years experience. Prime residential plots with clear titles, legal approvals, and all amenities.">
+    content="Explore residential plot projects around Pune, compare published plot sizes and indicative rates, and arrange a site-visit inquiry.">
   <meta name="keywords"
     content="land plots Pune, residential plots, plotted development, buy land Pune, land for sale, Kshitij Realty">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.kshitijrealty.com" />
 
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
     as="style">
-  <link rel="preload" href="assets/images/hero.webp" as="image">
+  <link rel="preload" href="assets/images/vasant2-p.jpg" as="image">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kshitij Realty",
-      "image": "https://www.RD-Estate.com/assets/images/logo.webp",
-      "@id": "",
-      "url": "https://www.RD-Estate.com",
-      "telephone": "+919022003828",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kadam wasti, Loni Kalbhor",
-        "addressLocality": "Pune",
-        "addressRegion": "Maharashtra",
-        "postalCode": "412201",
-        "addressCountry": "India"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 18.8979,
-        "longitude": 73.5735
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/kshitijrealty",
-        "https://www.instagram.com/kshitijrealty"
-      ]
-    }
-  </script>
 
   <style>
     /* Critical CSS inlined */
@@ -339,11 +287,19 @@
       display: none;
       cursor: pointer;
       z-index: 1001;
+      border: 0;
+      padding: var(--space-xs);
+      background: transparent;
     }
 
     .menu-toggle i {
       font-size: 1.5rem;
       color: var(--secondary);
+    }
+
+    :focus-visible {
+      outline: 3px solid #1B5E20;
+      outline-offset: 3px;
     }
 
     /* Navigation */
@@ -418,7 +374,7 @@
     .hero {
       height: 100vh;
       min-height: 600px;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/land-hero.webp') no-repeat center center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/vasant2-p.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       position: relative;
@@ -1105,7 +1061,7 @@
 
     /* CTA Section */
     .cta {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/land-cta.webp') no-repeat center center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/vasant2-p.jpg') no-repeat center center/cover;
       color: var(--white);
       text-align: center;
       padding: var(--space-xl) 0;
@@ -1386,6 +1342,7 @@
         width: 80%;
         max-width: 350px;
         height: 100vh;
+        overflow-y: auto;
         background: var(--white);
         box-shadow: var(--shadow-lg);
         flex-direction: column;
@@ -1401,7 +1358,8 @@
       .navbar-list {
         flex-direction: column;
         align-items: center;
-        gap: var(--space-lg);
+        gap: var(--space-md);
+        padding: var(--space-md) 0;
       }
 
       .call-float {
@@ -1435,19 +1393,212 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .listing-tools,
+    .comparison-panel,
+    .document-checklist {
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .listing-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: var(--space-sm);
+      align-items: end;
+    }
+
+    .listing-tools label,
+    .compare-control {
+      display: flex;
+      gap: var(--space-xs);
+      align-items: center;
+    }
+
+    .listing-tools label {
+      flex-direction: column;
+      align-items: stretch;
+      font-weight: 600;
+    }
+
+    .listing-tools select,
+    .listing-tools input {
+      min-height: 44px;
+      padding: var(--space-xs);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font: inherit;
+    }
+
+    .plot-card[hidden] {
+      display: none;
+    }
+
+    .plot-availability-note,
+    .comparison-status,
+    .form-status,
+    .privacy-note {
+      margin-top: var(--space-sm);
+      font-size: 0.9rem;
+    }
+
+    .compare-control {
+      margin-bottom: var(--space-sm);
+      color: var(--white);
+    }
+
+    .comparison-panel {
+      overflow-x: auto;
+    }
+
+    .comparison-panel table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    .comparison-panel th,
+    .comparison-panel td {
+      padding: var(--space-sm);
+      border-bottom: 1px solid var(--light-gray);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-panel th {
+      color: var(--primary-dark);
+    }
+
+    .comparison-panel h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .document-checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .document-checklist h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .document-checklist p,
+    .document-checklist li {
+      font-size: 0.95rem;
+    }
+
+    .locality-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .location-map {
+      height: auto;
+    }
+
+    .locality-card {
+      padding: var(--space-md);
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .locality-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+    }
+
+    .faq-list details {
+      padding: var(--space-md);
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-list summary {
+      cursor: pointer;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .faq-list details p {
+      margin: var(--space-sm) 0 0;
+    }
+
+    .compare-control input,
+    #agree-terms {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .form-status a {
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .contact-form .form-control {
+      min-height: 44px;
+    }
+
+    .contact-form textarea.form-control {
+      min-height: 120px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: var(--space-sm);
+      z-index: 2000;
+      padding: var(--space-sm);
+      background: var(--white);
+    }
+
+    .skip-link:focus {
+      top: var(--space-sm);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
-      <a href="main.html" class="logo">
-        <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/rd-logo.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/rd-logo.png" alt="RD1 Logo - Land Plotting Specialists" loading="lazy">
+      <a href="index.html" class="logo">
+        <img src="assets/images/rd-logo.png" alt="RD Estate" width="160" height="48">
       </a>
 
-      <nav class="navbar">
+      <nav class="navbar" id="site-navigation" aria-label="Main navigation">
         <ul class="navbar-list">
           <li><a href="#home" class="navbar-link active">Home</a></li>
           <li><a href="#about" class="navbar-link">About Us</a></li>
@@ -1455,15 +1606,16 @@
           <li><a href="#process" class="navbar-link">Our Process</a></li>
 
           <li><a href="#locations" class="navbar-link">Locations</a></li>
+          <li><a href="#documents" class="navbar-link">Buyer Checklist</a></li>
 
-          <li><a href="#testimonials" class="navbar-link">Testimonials</a></li>
+          <li><a href="#testimonials" class="navbar-link">Customer references</a></li>
           <li><a href="#contact" class="navbar-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="menu-toggle">
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </div>
   </header>
 
@@ -1473,11 +1625,11 @@
   </a>
 
   <!-- Hero Section -->
+  <main id="main-content">
   <section class="hero" id="home">
     <div class="hero-content container">
       <h1>Premium Land Plots in Prime Pune Locations</h1>
-      <p>Family-owned land plotting specialists with over 10 years of experience in developing premium residential plots
-        with clear titles, legal approvals, and all necessary amenities.</p>
+      <p>Explore residential plot projects around Pune, review the details published for each one, and contact the team to confirm current availability, pricing, and documentation.</p>
       <div class="hero-buttons">
         <a href="#plots" class="btn btn-primary">View Available Plots</a>
         <a href="#contact" class="btn btn-secondary">Get Free Consultation</a>
@@ -1494,7 +1646,7 @@
             <i class="fas fa-map-marked-alt"></i>
           </div>
           <h3>Prime Locations</h3>
-          <p>Carefully selected plots in Pune's most promising developing areas with excellent growth potential.</p>
+          <p>Explore the Pune-area localities where featured projects are listed.</p>
           <a href="#locations" class="btn btn-outline">Explore Locations</a>
         </div>
 
@@ -1502,9 +1654,9 @@
           <div class="service-icon">
             <i class="fas fa-file-contract"></i>
           </div>
-          <h3>Clear Titles</h3>
-          <p>100% legal plots with verified documents and hassle-free registration process.</p>
-          <a href="#process" class="btn btn-outline">Our Verification Process</a>
+          <h3>Review the Documents</h3>
+          <p>Ask for plot-specific records and approvals, then verify them independently before you commit.</p>
+          <a href="#documents" class="btn btn-outline">Buyer checklist</a>
         </div>
 
         <div class="service-card">
@@ -1512,8 +1664,8 @@
             <i class="fas fa-road"></i>
           </div>
           <h3>Ready Infrastructure</h3>
-          <p>Plots with developed roads, water supply, electricity connections and other essential amenities.</p>
-          <a href="#plots" class="btn btn-outline">View Amenities</a>
+          <p>Review the road, water, and electricity details published for each project and confirm them on-site.</p>
+          <a href="#plots" class="btn btn-outline">Compare projects</a>
         </div>
       </div>
     </div>
@@ -1524,50 +1676,69 @@
     <div class="container about-container">
       <div class="about-text">
         <h2 class="section-title">Our Land Plotting Expertise</h2>
-        <p>Since 2014, RD Estate has been transforming raw land into premium residential plots in Pune's most
-          sought-after locations. Our family-owned business takes pride in ethical land development practices and
-          transparent dealings.</p>
-        <p>We specialize in identifying land with excellent growth potential, ensuring all legal clearances, and
-          developing plots with proper infrastructure to create ready-to-build properties for our clients.</p>
-
-        <div class="stats">
-          <div class="stat-item">
-            <span class="stat-number" data-target="10">0</span><span>+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="50">0</span><span>+</span>
-            <span class="stat-label">Plots Developed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="100">0</span><span>%</span>
-            <span class="stat-label">Legal Assurance</span>
-          </div>
-        </div>
+        <p>RD Estate presents residential plotted developments in Pune-area localities. Use each project page to review the available information and ask the team for current details.</p>
+        <p>Before booking, visit the site, request a dated cost sheet and project-specific documents, and arrange independent legal verification.</p>
 
         <a href="#process" class="btn btn-primary">Our Plotting Process</a>
       </div>
 
       <div class="about-image">
-        <img src="assets/images/about-team.webp" data-src="assets/images/about-team.webp"
-          alt="RD-Estate land plotting team" loading="lazy">
-        <div class="about-badge">Trusted Since 2014</div>
+        <img src="assets/images/rd.png" alt="RD Estate branding" loading="lazy">
       </div>
     </div>
   </section>
   <!-- Plots Availability Section -->
   <section class="plots-availability" id="plots">
     <div class="container">
-      <h2 class="section-title">Currently Available Plots</h2>
-      <p class="section-subtitle">Premium residential plots with all amenities and clear titles available now.</p>
+      <h2 class="section-title">Featured Plot Projects</h2>
+      <p class="section-subtitle">Browse the projects and compare the details currently published on this site.</p>
+
+      <div class="listing-tools" aria-label="Filter available plots">
+        <label for="plot-search">Search projects
+          <input id="plot-search" type="search" placeholder="Project or locality">
+        </label>
+        <label for="plot-location-filter">Location
+          <select id="plot-location-filter">
+            <option value="">All locations</option>
+            <option value="bhekrai">Bhekrai Nagar / Hadapsar</option>
+            <option value="loni">Loni Kalbhor</option>
+          </select>
+        </label>
+        <label for="plot-budget-filter">Maximum listed rate
+          <select id="plot-budget-filter">
+            <option value="">Any rate</option>
+            <option value="1000">Up to ₹1,000/sq.ft.</option>
+            <option value="2500">Up to ₹2,500/sq.ft.</option>
+            <option value="3000">Up to ₹3,000/sq.ft.</option>
+          </select>
+        </label>
+        <label for="plot-size-filter">Plot size includes
+          <select id="plot-size-filter">
+            <option value="">Any size</option>
+            <option value="1000">1,000 sq.ft.</option>
+            <option value="1500">1,500 sq.ft.</option>
+            <option value="2000">2,000 sq.ft.</option>
+          </select>
+        </label>
+        <label for="plot-sort">Sort by
+          <select id="plot-sort">
+            <option value="default">Featured</option>
+            <option value="price-low">Lowest listed rate</option>
+            <option value="price-high">Highest listed rate</option>
+            <option value="size-low">Smallest plot first</option>
+          </select>
+        </label>
+      </div>
+      <p id="plot-results-status" class="plot-availability-note" role="status" aria-live="polite"></p>
 
       <div class="plots-grid">
-        <div class="plot-card">
+        <div class="plot-card" data-name="Vasant Park" data-location="bhekrai" data-locality="Bhekrai Nagar (near Hadapsar)" data-rate="₹2,000–₹2,500/sq.ft." data-plot-size="1,000–2,000 sq.ft." data-min-price="2000" data-max-price="2500" data-min-size="1000" data-max-size="2000">
           <div class="plot-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/vasant.JPG" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/vasant.JPG" alt="Loni Kalbhor Plot - Phase 1" loading="lazy">
-            <div class="plot-badge">Limited Availability</div>
+            <img src="assets/images/vasant.JPG" alt="Vasant Park plotted development" loading="lazy">
+            <div class="plot-badge">Ask for availability</div>
           </div>
           <div class="plot-content">
+            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="vasant-park"> Add to comparison</label>
             <h3>Vasant Park</h3>
             <div class="plot-details">
               <div class="plot-detail">
@@ -1597,18 +1768,19 @@
             </div>
             <div class="plot-price">₹2,000 - ₹2,500/sq.ft.</div>
             <div class="plot-actions">
-              <a href="#contact" class="btn btn-primary">Book Site Visit</a>
+              <a href="#contact" class="btn btn-primary" data-project="Vasant Park">Book Site Visit</a>
               <a href="vasant-a.html" class="btn btn-secondary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="plot-card">
+        <div class="plot-card" data-name="Mayuresh Park" data-location="loni" data-locality="Near Ramdara, Loni Kalbhor" data-rate="₹750–₹800/sq.ft." data-plot-size="1,000–1,500 sq.ft." data-min-price="750" data-max-price="800" data-min-size="1000" data-max-size="1500">
           <div class="plot-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/ramdara.JPG" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/ramdara.JPG" alt="Hadapsar Plot - Premium" loading="lazy">
-            <div class="plot-badge">Corner Plots</div>
+            <img src="assets/images/ramdara.JPG" alt="Mayuresh Park plotted development" loading="lazy">
+            <div class="plot-badge">Ask for availability</div>
           </div>
           <div class="plot-content">
+            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="mayuresh-park"> Add to comparison</label>
             <h3>Mayuresh Park</h3>
             <div class="plot-details">
               <div class="plot-detail">
@@ -1642,20 +1814,22 @@
             </div>
             <div class="plot-price">₹750 - ₹800/sq.ft.</div>
             <div class="plot-actions">
-              <a href="#contact" class="btn btn-primary">Book Site Visit</a>
+              <a href="#contact" class="btn btn-primary" data-project="Mayuresh Park">Book Site Visit</a>
               <a href="ramdara.html" class="btn btn-secondary">Know more</a>
             </div>
           </div>
         </div>
 
 
-        <div class="plot-card">
+        <div class="plot-card" data-name="Gurudatta Park" data-location="bhekrai" data-locality="Bhekrai Nagar (near Hadapsar)" data-rate="₹2,400–₹3,000/sq.ft." data-plot-size="1,000–1,500 sq.ft." data-min-price="2400" data-max-price="3000" data-min-size="1000" data-max-size="1500">
           <div class="plot-image">
             <a href="gurudatta.html">
-              <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/gurudatta.jpg" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/gurudatta.jpg" alt="Wagholi Plot - Lakeview" loading="lazy">
-              <div class="plot-badge">Near City</div>
-          </div></a>
+              <img src="assets/images/gurudatta.jpg" alt="Gurudatta Park plotted development" loading="lazy">
+            </a>
+            <div class="plot-badge">Ask for availability</div>
+          </div>
           <div class="plot-content">
+            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="gurudatta-park"> Add to comparison</label>
             <h3>Gurudatta Park</h3>
             <div class="plot-details">
               <div class="plot-detail">
@@ -1684,77 +1858,50 @@
               </div>
 
             </div>
-            <a href="gurudatta.html">
-              <div class="plot-price">₹2,400 - ₹3,000/sq.ft.</div>
-              <div class="plot-actions">
-                <a href="#contact" class="btn btn-primary">Book Site Visit</a>
-                <a href="Gurudatta-Park-Broucher.pdf" class="btn btn-secondary">Download Brochure</a>
-            </a>
+            <div class="plot-price">₹2,400 - ₹3,000/sq.ft.</div>
+            <div class="plot-actions">
+              <a href="#contact" class="btn btn-primary" data-project="Gurudatta Park">Book Site Visit</a>
+              <a href="documents/Gurudatta-Park-Broucher.pdf" class="btn btn-secondary" download>Download Brochure</a>
+              <a href="gurudatta.html" class="btn btn-outline">Project details</a>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
 
+    <p class="container plot-availability-note">Prices and availability are shown as published and may change; no last-verified date is supplied. Confirm the current rate, inventory, included charges, and terms directly before making a decision.</p>
+    <div class="container comparison-panel" id="comparison" hidden>
+      <h3>Compare selected projects</h3>
+      <div id="comparison-table"></div>
+      <p id="comparison-status" class="comparison-status" role="status" aria-live="polite">Select up to three projects to compare.</p>
+      <button class="btn btn-outline" id="clear-comparison" type="button">Clear comparison</button>
+    </div>
     <div style="text-align: center; margin-top: var(--space-xl);">
       <a href="#contact" class="btn btn-primary">Get Complete Plot List</a>
     </div>
     </div>
   </section>
 
-  <!-- Investment Benefits Section -->
-  <section class="plotting-services">
+  <!-- Buyer due diligence checklist -->
+  <section class="plotting-services" id="documents">
     <div class="container">
-      <h2 class="section-title">Why Invest in Our Plots</h2>
-      <p class="section-subtitle">Strategic advantages that make our plots the smart choice for your investment.</p>
+      <h2 class="section-title">What to Verify Before You Buy</h2>
+      <p class="section-subtitle">Review project-specific records independently and confirm every detail before booking.</p>
 
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/growth.png" alt="Growth Potential">
-          </div>
-          <div class="feature-content">
-            <h3>High Growth Potential</h3>
-            <p>Our plots are located in areas with proven appreciation rates and upcoming infrastructure projects.</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Near upcoming metro corridors</li>
-              <li><i class="fas fa-check"></i> Proximity to IT parks & SEZs</li>
-              <li><i class="fas fa-check"></i> Future road widening projects</li>
-              <li><i class="fas fa-check"></i> Developing social infrastructure</li>
-            </ul>
-          </div>
+      <div class="document-checklist">
+        <div>
+          <h3>Ask for plot records</h3>
+          <p>Request the title chain, land record extracts, approved layout and applicable permissions, encumbrance information, survey/demarcation details, and draft sale agreement for the project you are considering.</p>
         </div>
-
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/security.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/security.png" alt="Legal Security" loading="lazy">
-          </div>
-          <div class="feature-content">
-            <h3>Complete Legal Security</h3>
-            <p>We provide comprehensive legal documentation and support for worry-free ownership.</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Clear title deeds</li>
-              <li><i class="fas fa-check"></i> Approved layouts</li>
-              <li><i class="fas fa-check"></i> No litigation history</li>
-              <li><i class="fas fa-check"></i> Assistance with registration</li>
-            </ul>
-          </div>
+        <div>
+          <h3>Check charges and terms</h3>
+          <p>Get a written, itemized quote covering taxes, registration, infrastructure or maintenance charges, payment milestones, possession terms, and cancellation/refund conditions.</p>
         </div>
-
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/flexible-pay.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/flexible-pay.png" alt="Flexible Payment Options" loading="lazy">
-          </div>
-          <div class="feature-content">
-            <h3>Flexible Payment Options</h3>
-            <p>We offer customized payment plans to suit your financial convenience.</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> EMI options available</li>
-              <li><i class="fas fa-check"></i> Bank loan assistance</li>
-              <li><i class="fas fa-check"></i> No hidden charges</li>
-              <li><i class="fas fa-check"></i> Transparent pricing</li>
-            </ul>
-          </div>
+        <div>
+          <h3>Use independent advice</h3>
+          <p>Have a qualified local property lawyer and relevant authorities verify the documents and approvals. This website is not a substitute for legal or financial advice.</p>
+          <a href="#contact" class="btn btn-outline" data-inquiry-message="Please share the current project-specific land records, approvals, and draft agreement for my independent review.">Request project documents</a>
         </div>
       </div>
     </div>
@@ -1771,8 +1918,8 @@
         <div class="project-card">
           <div class="project-media">
             <div class="project-video-container">
-              <video class="project-video" poster="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/master/balaji-1.JPG">
-                <source src="Balaji-V1.mp4" type="video/mp4">
+              <video class="project-video" poster="assets/images/balaji-1.JPG" preload="none">
+                <source src="assets/videos/Balaji-V1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="play-button">
@@ -1794,8 +1941,8 @@
         <div class="project-card">
           <div class="project-media">
             <div class="project-video-container">
-              <video class="project-video" poster="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/ramdara.JPG">
-                <source src="Ramdara-V1.mp4" type="video/mp4">
+              <video class="project-video" poster="assets/images/ramdara.JPG" preload="none">
+                <source src="assets/videos/Ramdara-V1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="play-button">
@@ -1805,11 +1952,11 @@
 
           </div>
           <div class="project-content">
-            <h3>Lakeview Residency</h3>
+            <h3>Mayuresh Park</h3>
             <p><strong>Location:</strong> Loni Kalbhor (Near Ramdara), Pune</p>
             <p><strong>Completion:</strong> 2025</p>
             <p><strong>Details:</strong> 110 plots with 40ft roads and green belt</p>
-            <a href="#" class="btn btn-outline">View Project Details</a>
+            <a href="ramdara.html" class="btn btn-outline">View Project Details</a>
           </div>
         </div>
 
@@ -1817,8 +1964,8 @@
         <div class="project-card">
           <div class="project-media">
             <div class="project-video-container">
-              <video class="project-video" poster="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/joynest-f.JPG">
-                <source src="Joynest-V1.mp4" type="video/mp4">
+              <video class="project-video" poster="assets/images/joynest-f.JPG" preload="none">
+                <source src="assets/videos/Joynest-V1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="play-button">
@@ -1840,8 +1987,8 @@
         <div class="project-card">
           <div class="project-media">
             <div class="project-video-container">
-              <video class="project-video" poster="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/canal.JPG">
-                <source src="Canal.mp4" type="video/mp4">
+              <video class="project-video" poster="assets/images/canal.JPG" preload="none">
+                <source src="assets/videos/Canal.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="play-button">
@@ -1863,8 +2010,8 @@
         <div class="project-card">
           <div class="project-media">
             <div class="project-video-container">
-              <video class="project-video" poster="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/vasant2-p.jpg" muted playsinline>
-                <source src="vasant2-v.mp4" type="video/mp4">
+              <video class="project-video" poster="assets/images/vasant2-p.jpg" preload="none" muted playsinline>
+                <source src="assets/videos/vasant2-v.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="play-button">
@@ -1885,10 +2032,9 @@
 
       <!-- View More Button -->
       <div class="view-more-container">
-        <button id="viewMoreBtn" class="btn btn-primary">View More Projects</button>
+        <button id="viewMoreBtn" class="btn btn-primary" type="button" aria-expanded="false">View More Projects</button>
       </div>
     </div>
-  </section>
   </section>
 
   <!-- Plotting Process Section -->
@@ -1901,28 +2047,27 @@
       <div class="service-features">
         <div class="feature-card">
           <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/acquision.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/acquision.png" alt="Land Selection Process" loading="lazy">
+            <img src="assets/images/acquision.png" alt="Land selection process" loading="lazy">
           </div>
           <div class="feature-content">
             <h3>1. Strategic Land Acquisition</h3>
-            <p>We carefully select land parcels based on location potential, future development plans, and
-              accessibility.</p>
+            <p>Review the locality and access information published for each project, then confirm current availability with the team.</p>
             <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Growth potential analysis</li>
-              <li><i class="fas fa-check"></i> Proximity to key infrastructure</li>
-              <li><i class="fas fa-check"></i> Environmental considerations</li>
-              <li><i class="fas fa-check"></i> Market demand assessment</li>
+              <li><i class="fas fa-check"></i> Compare project localities</li>
+              <li><i class="fas fa-check"></i> Check plot sizes and listed rates</li>
+              <li><i class="fas fa-check"></i> Ask for a dated cost sheet</li>
+              <li><i class="fas fa-check"></i> Arrange a site visit</li>
             </ul>
           </div>
         </div>
 
         <div class="feature-card">
           <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/verification.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/verification.png" alt="Legal Verification Process" loading="lazy">
+            <img src="assets/images/verification.png" alt="Legal document review" loading="lazy">
           </div>
           <div class="feature-content">
             <h3>2. Thorough Legal Verification</h3>
-            <p>Every plot undergoes rigorous legal scrutiny to ensure clear titles and proper approvals.</p>
+            <p>Ask for plot-specific title and approval records, and have them independently reviewed before booking.</p>
             <ul class="feature-list">
               <li><i class="fas fa-check"></i> Title deed verification</li>
               <li><i class="fas fa-check"></i> Encumbrance certificate</li>
@@ -1934,16 +2079,16 @@
 
         <div class="feature-card">
           <div class="feature-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/development.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/development.png" alt="Land Development Process" loading="lazy">
+            <img src="assets/images/development.png" alt="Land development process" loading="lazy">
           </div>
           <div class="feature-content">
-            <h3>3. Professional Plot Development</h3>
-            <p>We transform raw land into premium residential plots with all necessary infrastructure.</p>
+            <h3>3. Visit and Confirm</h3>
+            <p>Visit the site and confirm plot boundaries, access, infrastructure, charges, and terms in writing before proceeding.</p>
             <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Proper surveying & demarcation</li>
-              <li><i class="fas fa-check"></i> Road development</li>
-              <li><i class="fas fa-check"></i> Water & drainage systems</li>
-              <li><i class="fas fa-check"></i> Electricity provisions</li>
+              <li><i class="fas fa-check"></i> Verify the plot location on-site</li>
+              <li><i class="fas fa-check"></i> Confirm roads and utilities</li>
+              <li><i class="fas fa-check"></i> Review the final cost and payment terms</li>
+              <li><i class="fas fa-check"></i> Check agreement and possession details</li>
             </ul>
           </div>
         </div>
@@ -1954,12 +2099,22 @@
 
 
   <!-- Location Map Section -->
-  <section class="location-map">
+  <section class="location-map" id="locations">
     <div class="container">
-      <h2 class="section-title">Our Plot Locations</h2>
-      <p class="section-subtitle">Strategic locations with excellent connectivity to Pune's major hubs and
-        infrastructure.</p>
-      <div id="map" style="height: 400px; width: 100%; border-radius: var(--radius-md); overflow: hidden;"></div>
+      <h2 class="section-title">Explore Project Localities</h2>
+      <p class="section-subtitle">Open a map search for the locality. These links show the general area, not the exact plot boundary or a guaranteed route; confirm the site pin with the sales team.</p>
+      <div class="locality-links">
+        <article class="locality-card">
+          <h3>Bhekrai Nagar / Hadapsar</h3>
+          <p>Vasant Park and Gurudatta Park are listed in this area.</p>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Bhekrai+Nagar+Pune" target="_blank" rel="noopener noreferrer">Open locality map</a>
+        </article>
+        <article class="locality-card">
+          <h3>Loni Kalbhor</h3>
+          <p>Mayuresh Park is listed near Ramdara in Loni Kalbhor.</p>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Loni+Kalbhor+Pune" target="_blank" rel="noopener noreferrer">Open locality map</a>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -1974,7 +2129,7 @@
       <div class="team-grid">
         <div class="team-member">
           <div class="member-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/kiran.png" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/kiran.png" alt="Kiran Dugane - Founder" loading="lazy">
+            <img src="assets/images/kiran.png" alt="Kiran Dugane" loading="lazy">
           </div>
           <h3>Kiran Dugane</h3>
           <p>Founder & Land Acquisition Expert</p>
@@ -1983,7 +2138,6 @@
             potential.
           </div>
           <div class="member-certifications">
-            <span class="certification">RERA Registered</span>
             <span class="certification">Urban Planning</span>
           </div>
           <a href="#contact" class="btn btn-outline">Contact Kiran</a>
@@ -1993,7 +2147,7 @@
 
         <div class="team-member">
           <div class="member-image">
-            <img src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/raj-p.jpg" data-src="https://media.githubusercontent.com/media/Raj-K-D/RD-Estate/0db3311c87981239064adde117c9cb3f8dcb3351/raj-p.jpg" alt="Rajesh Patil - Customer Relations" loading="lazy">
+            <img src="assets/images/raj-p.jpg" alt="Raj Dugane" loading="lazy">
           </div>
           <h3>Raj Dugane</h3>
           <p>Customer Relations Manager</p>
@@ -2012,59 +2166,13 @@
   <!-- Past Projects Section -->
   <!-- Past Projects Section -->
 
-  <!-- Testimonials Section -->
+  <!-- Customer verification -->
   <section class="testimonials" id="testimonials">
     <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-subtitle">Hear from investors and homeowners who've purchased plots through us.</p>
-
-      <div class="testimonial-slider">
-        <div class="testimonial active">
-          <div class="quote">
-            The plot I purchased from Kshitij Realty has already appreciated by 40% in just 2 years. Their thorough
-            legal verification gave me complete peace of mind throughout the process.
-          </div>
-          <div class="client">
-            <img src="assets/images/client-ajay.webp" alt="Ajay Mehta" loading="lazy">
-            <div class="client-info">
-              <h4>Ajay Mehta</h4>
-              <p>Plot Owner - Loni Kalbhor</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="quote">
-            As an NRI, I was hesitant about buying land in India. Kshitij Realty's transparent process and regular
-            updates made it smooth and hassle-free. The plot is exactly as promised.
-          </div>
-          <div class="client">
-            <img src="assets/images/client-priya.webp" alt="Priya Nair" loading="lazy">
-            <div class="client-info">
-              <h4>Priya Nair</h4>
-              <p>NRI Investor - Hadapsar</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="quote">
-            We bought a plot to build our retirement home. The team helped us choose the perfect location and guided us
-            through every step. Now we're ready to start construction!
-          </div>
-          <div class="client">
-            <img src="assets/images/client-deshpande.webp" alt="Deshpande Couple" loading="lazy">
-            <div class="client-info">
-              <h4>Mr. & Mrs. Deshpande</h4>
-              <p>Plot Owners - Wagholi</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-controls">
-          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-        </div>
+      <h2 class="section-title">Want to Hear From Plot Owners?</h2>
+      <p class="section-subtitle">We do not publish customer reviews or return forecasts here because independently verifiable references have not been provided. Ask the team whether they can connect you with owners, then verify any claims for yourself.</p>
+      <div style="text-align: center;">
+        <a href="#contact" class="btn btn-primary" data-inquiry-message="Can you connect me with independently verifiable references from plot owners?">Ask for customer references</a>
       </div>
     </div>
   </section>
@@ -2074,47 +2182,27 @@
     <div class="container">
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-subtitle">Answers to common questions about our land plots and buying process.</p>
-
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-content">
-            <h3>What documents should I verify before buying a plot?</h3>
-            <p>Essential documents include:</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-file-alt"></i> Title Deed (7/12 extract)</li>
-              <li><i class="fas fa-file-alt"></i> Encumbrance Certificate</li>
-              <li><i class="fas fa-file-alt"></i> Approved Layout Plan</li>
-              <li><i class="fas fa-file-alt"></i> RTC & Mutation Documents</li>
-              <li><i class="fas fa-file-alt"></i> NOC from relevant authorities</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <h3>What payment options do you offer?</h3>
-            <p>We provide flexible payment solutions:</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-rupee-sign"></i> One-time payment (discount available)</li>
-              <li><i class="fas fa-rupee-sign"></i> Installment plans (3-24 months)</li>
-              <li><i class="fas fa-rupee-sign"></i> Bank loan assistance</li>
-              <li><i class="fas fa-rupee-sign"></i> NRI investment support</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <h3>How do you ensure the plot's legal clearance?</h3>
-            <p>Our rigorous verification process includes:</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-search"></i> Title chain verification for 30+ years</li>
-              <li><i class="fas fa-search"></i> Legal opinion from property lawyers</li>
-              <li><i class="fas fa-search"></i> Verification of all approvals</li>
-              <li><i class="fas fa-search"></i> No litigation guarantee</li>
-            </ul>
-          </div>
-        </div>
+      <div class="faq-list">
+        <details>
+          <summary>Are the listed rates and plots guaranteed to be current?</summary>
+          <p>No. Rates and availability can change. Ask the team for a dated written quote and current plot inventory before visiting or paying.</p>
+        </details>
+        <details>
+          <summary>Can I see the legal and approval documents before booking?</summary>
+          <p>Request documents for the specific project and plot. Have an independent property lawyer verify ownership, permissions, encumbrances, layout and agreement terms.</p>
+        </details>
+        <details>
+          <summary>What is included in the listed price?</summary>
+          <p>Confirm in writing whether taxes, registration, infrastructure, maintenance, and other charges are included. The rate shown on this site is not a complete cost estimate.</p>
+        </details>
+        <details>
+          <summary>How do I arrange a site visit?</summary>
+          <p>Use the inquiry form below to choose a project and preferred date. It opens a prefilled WhatsApp message; you review and send it from WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Can I compare projects or get a brochure?</summary>
+          <p>Use the comparison checkboxes in the available plots section. A downloadable brochure is currently linked from the Gurudatta Park listing.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -2123,8 +2211,7 @@
   <section class="cta">
     <div class="container">
       <h2>Ready to Invest in Your Dream Plot?</h2>
-      <p>Our team is ready to guide you through every step - from selecting the perfect plot to completing all legal
-        formalities.</p>
+      <p>Ask the team about current inventory, arrange a site visit, and request a written price quote and project documents before you decide.</p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">Schedule Site Visit</a>
         <a href="tel:+919022003828" class="btn btn-secondary">Call Now: (+91) 9022003828</a>
@@ -2187,27 +2274,27 @@
           <form id="inquiryForm">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" required>
+              <input type="text" id="name" name="name" class="form-control" autocomplete="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" class="form-control" required>
+              <label for="email">Your Email (optional)</label>
+              <input type="email" id="email" name="email" class="form-control" autocomplete="email">
             </div>
 
             <div class="form-group">
-              <label for="phone">Your No.</label>
-              <input type="tel" id="phone" class="form-control" required>
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel" required>
             </div>
 
             <div class="form-group">
-              <label for="interest">Plot of Interest</label>
-              <select id="interest" class="form-control">
-                <option value="">Select plot location</option>
-                <option value="loni">Loni Kalbhor</option>
-                <option value="hadapsar">Hadapsar</option>
-                <option value="wagholi">Wagholi</option>
-                <option value="other">Other Locations</option>
+              <label for="interest">Project of interest</label>
+              <select id="interest" name="interest" class="form-control">
+                <option value="">Select a project</option>
+                <option value="Vasant Park">Vasant Park</option>
+                <option value="Mayuresh Park">Mayuresh Park</option>
+                <option value="Gurudatta Park">Gurudatta Park</option>
+                <option value="Other / not sure">Other / not sure</option>
               </select>
             </div>
 
@@ -2223,22 +2310,29 @@
             </div>
 
             <div class="form-group">
+              <label for="visit-date">Preferred site-visit date (optional)</label>
+              <input type="date" id="visit-date" name="visit-date" class="form-control">
+            </div>
+
+            <div class="form-group">
               <label for="message">Your Message</label>
-              <textarea id="message" class="form-control"></textarea>
+              <textarea id="message" name="message" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
               <input type="checkbox" id="agree-terms" required>
-              <label for="agree-terms">I agree to the <a href="/privacy-policy.html">Privacy Policy</a> and authorize
-                Kshitij Realty to contact me</label>
+              <label for="agree-terms">I have read the <a href="privacy-policy.html">Privacy Notice</a> and agree to open WhatsApp with these details for sending to RD Estate.</label>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send inquiry via WhatsApp</button>
+            <p class="privacy-note">This static website does not submit or store the form. Your browser opens WhatsApp with a draft message; nothing is sent until you review and send it there.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -2246,14 +2340,8 @@
       <div class="footer-content">
         <div class="footer-col">
           <h3>Kshitij Realty</h3>
-          <p>Pune's trusted land plotting specialists since 2012. We develop premium residential plots with clear titles
-            and complete infrastructure.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
+          <p>Explore residential plotted developments around Pune. Confirm project details, pricing, availability, and documents directly before making a decision.</p>
+          <p><a href="tel:+919022003828">Call (+91) 9022003828</a></p>
         </div>
 
         <div class="footer-col">
@@ -2264,7 +2352,8 @@
             <li><a href="#plots">Available Plots</a></li>
             <li><a href="#locations">Locations</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#testimonials">Customer references</a></li>
+            <li><a href="#documents">Buyer checklist</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -2272,32 +2361,22 @@
         <div class="footer-col">
           <h3>Plot Locations</h3>
           <ul class="footer-links">
-            <li><a href="#">Loni Kalbhor</a></li>
-            <li><a href="#">Hadapsar</a></li>
-            <li><a href="#">Wagholi</a></li>
-            <li><a href="#">Hinjewadi</a></li>
-            <li><a href="#">Chakan</a></li>
-            <li><a href="#">Other Areas</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Loni+Kalbhor+Pune" target="_blank" rel="noopener noreferrer">Loni Kalbhor</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bhekrai+Nagar+Pune" target="_blank" rel="noopener noreferrer">Bhekrai Nagar / Hadapsar</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3>Newsletter</h3>
-          <p>Subscribe for updates on new plot releases, investment tips, and special offers.</p>
-          <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Your email address" required>
-            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-          </form>
+          <h3>Ask a Question</h3>
+          <p>Contact the team for current listings, site visits, brochure availability, or project documents.</p>
+          <a class="btn btn-primary" href="https://wa.me/919022003828" target="_blank" rel="noopener noreferrer">WhatsApp RD Estate</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Raj Estate. All Rights Reserved. |
-          <a href="/privacy-policy.html">Privacy Policy</a> |
-          <a href="/terms-conditions.html">Terms of Service</a> |
-          <a href="/refund-policy.html">Refund Policy</a>
+        <p>&copy; <span id="current-year">2026</span> RD Estate. Information is subject to confirmation. |
+          <a href="privacy-policy.html">Privacy Notice</a>
         </p>
-        <p>RERA Registered: A123456789</p>
       </div>
     </div>
   </footer>
@@ -2311,44 +2390,29 @@
         menuToggle: document.querySelector('.menu-toggle'),
         navbar: document.querySelector('.navbar'),
         header: document.querySelector('.header'),
-        testimonials: document.querySelectorAll('.testimonial'),
-        prevBtn: document.querySelector('.prev-btn'),
-        nextBtn: document.querySelector('.next-btn'),
-        inquiryForm: document.getElementById('inquiryForm'),
-        statsSection: document.querySelector('.stats'),
-        counters: document.querySelectorAll('.stat-number'),
-        locationsSection: document.querySelector('.location-map'),
-        projectsGrid: document.querySelector('.projects-grid'),
-        viewMoreBtn: document.getElementById('viewMoreBtn')
-      };
-
-      // State
-      let state = {
-        currentTestimonial: 0,
-        countersStarted: false
+        inquiryForm: document.getElementById('inquiryForm')
       };
 
       // Initialize all functionality
       function init() {
         setupMobileMenu();
         setupHeaderScroll();
-        setupTestimonialSlider();
         setupFormSubmission();
         setupSmoothScrolling();
-        setupCounterAnimation();
-        setupGoogleMaps();
-        setupLazyLoading();
         setupProjectVideos();
-        setupImageSliders();
         setupWhatsAppButton();
         setupViewMoreProjects();
-        setupServiceWorker();
+        setupPlotListings();
+        setupInquiryDefaults();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
       }
 
       // Mobile Menu Toggle
       function setupMobileMenu() {
         elements.menuToggle.addEventListener('click', () => {
-          elements.navbar.classList.toggle('active');
+          const isOpen = elements.navbar.classList.toggle('active');
+          elements.menuToggle.setAttribute('aria-expanded', String(isOpen));
+          elements.menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
           const icon = elements.menuToggle.querySelector('i');
           icon.classList.toggle('fa-bars');
           icon.classList.toggle('fa-times');
@@ -2358,6 +2422,8 @@
         document.querySelectorAll('.navbar-link').forEach(link => {
           link.addEventListener('click', () => {
             elements.navbar.classList.remove('active');
+            elements.menuToggle.setAttribute('aria-expanded', 'false');
+            elements.menuToggle.setAttribute('aria-label', 'Open menu');
             const icon = elements.menuToggle.querySelector('i');
             icon.classList.add('fa-bars');
             icon.classList.remove('fa-times');
@@ -2372,68 +2438,32 @@
         });
       }
 
-      // Testimonial Slider
-      function setupTestimonialSlider() {
-        function showTestimonial(index) {
-          elements.testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-          elements.testimonials[index].classList.add('active');
-          state.currentTestimonial = index;
-        }
-
-        elements.prevBtn.addEventListener('click', () => {
-          let newIndex = state.currentTestimonial - 1;
-          if (newIndex < 0) newIndex = elements.testimonials.length - 1;
-          showTestimonial(newIndex);
-        });
-
-        elements.nextBtn.addEventListener('click', () => {
-          let newIndex = state.currentTestimonial + 1;
-          if (newIndex >= elements.testimonials.length) newIndex = 0;
-          showTestimonial(newIndex);
-        });
-
-        // Auto-rotate testimonials
-        setInterval(() => {
-          let newIndex = state.currentTestimonial + 1;
-          if (newIndex >= elements.testimonials.length) newIndex = 0;
-          showTestimonial(newIndex);
-        }, 8000);
-      }
-
       // Form Submission
       function setupFormSubmission() {
-        elements.inquiryForm.addEventListener('submit', async (e) => {
+        elements.inquiryForm.addEventListener('submit', (e) => {
           e.preventDefault();
-
-          const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            interest: document.getElementById('interest').value,
-            purpose: document.getElementById('purpose').value,
-            message: document.getElementById('message').value,
-            timestamp: new Date().toISOString()
-          };
-
-          try {
-            const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-              alert('Thank you for your inquiry! We will contact you shortly.');
-              elements.inquiryForm.reset();
-            } else {
-              throw new Error('Form submission failed');
-            }
-          } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error submitting your form. Please try again or call us directly.');
-          }
+          const value = (id) => document.getElementById(id).value.trim();
+          const fields = [
+            ['Name', value('name')],
+            ['Email', value('email') || 'Not provided'],
+            ['Phone', value('phone')],
+            ['Project', value('interest') || 'Not selected'],
+            ['Purpose', value('purpose') || 'Not selected'],
+            ['Preferred site-visit date', value('visit-date') || 'Not selected'],
+            ['Message', value('message') || 'None']
+          ];
+          const message = 'Hello RD Estate, I would like to enquire:\n' +
+            fields.map(([label, fieldValue]) => `${label}: ${fieldValue}`).join('\n');
+          const whatsappUrl = `https://wa.me/919022003828?text=${encodeURIComponent(message)}`;
+          const status = document.getElementById('form-status');
+          status.textContent = 'WhatsApp should open with your draft. Review it and press Send there. ';
+          const fallback = document.createElement('a');
+          fallback.href = whatsappUrl;
+          fallback.target = '_blank';
+          fallback.rel = 'noopener noreferrer';
+          fallback.textContent = 'Open WhatsApp manually';
+          status.appendChild(fallback);
+          window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         });
       }
 
@@ -2455,142 +2485,6 @@
             }
           });
         });
-      }
-
-      // Counter Animation
-      function setupCounterAnimation() {
-        function animateCounters() {
-          elements.counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const duration = 1500;
-            const start = performance.now();
-
-            function update(currentTime) {
-              const elapsed = currentTime - start;
-              const progress = Math.min(elapsed / duration, 1);
-              const value = Math.floor(progress * target);
-              counter.innerText = value;
-
-              if (progress < 1) {
-                requestAnimationFrame(update);
-              } else {
-                counter.innerText = target;
-              }
-            }
-
-            requestAnimationFrame(update);
-          });
-        }
-
-        window.addEventListener('scroll', () => {
-          if (!elements.statsSection || state.countersStarted) return;
-
-          const sectionTop = elements.statsSection.getBoundingClientRect().top;
-          if (sectionTop < window.innerHeight - 100) {
-            state.countersStarted = true;
-            animateCounters();
-          }
-        });
-      }
-
-      // Google Maps
-      function setupGoogleMaps() {
-        function initMap() {
-          const mapOptions = {
-            center: { lat: 18.5204, lng: 73.8567 }, // Pune coordinates
-            zoom: 11,
-            styles: [
-              {
-                "featureType": "poi",
-                "stylers": [{ "visibility": "off" }]
-              },
-              {
-                "featureType": "transit",
-                "stylers": [{ "visibility": "off" }]
-              }
-            ]
-          };
-
-          const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-          // Plot locations with markers
-          const locations = [
-            {
-              position: { lat: 18.8979, lng: 73.5735 }, // Loni Kalbhor
-              title: 'Loni Kalbhar Plots',
-              icon: 'assets/images/marker-green.png'
-            },
-            {
-              position: { lat: 18.4966, lng: 73.9419 }, // Hadapsar
-              title: 'Hadapsar Plots',
-              icon: 'assets/images/marker-green.png'
-            },
-            {
-              position: { lat: 18.5822, lng: 73.9977 }, // Wagholi
-              title: 'Wagholi Plots',
-              icon: 'assets/images/marker-green.png'
-            }
-          ];
-
-          // Add markers
-          locations.forEach(location => {
-            new google.maps.Marker({
-              position: location.position,
-              map: map,
-              title: location.title,
-              icon: location.icon
-            });
-          });
-        }
-
-        function loadGoogleMaps() {
-          const script = document.createElement('script');
-          script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap`;
-          script.async = true;
-          script.defer = true;
-          document.body.appendChild(script);
-        }
-
-        if (elements.locationsSection) {
-          const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              loadGoogleMaps();
-              observer.unobserve(elements.locationsSection);
-            }
-          }, { threshold: 0.1 });
-
-          observer.observe(elements.locationsSection);
-        }
-      }
-
-      // Lazy Loading
-      function setupLazyLoading() {
-        if ('loading' in HTMLImageElement.prototype) {
-          // Native lazy loading is supported
-          const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-          lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-          });
-        } else {
-          // Fallback for browsers without native lazy loading
-          const lazyLoad = function () {
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
-            lazyImages.forEach(img => {
-              if (img.getBoundingClientRect().top <= window.innerHeight + 100 &&
-                img.getBoundingClientRect().bottom >= 0 &&
-                getComputedStyle(img).display !== "none") {
-                img.src = img.dataset.src;
-                img.removeAttribute('loading');
-              }
-            });
-          };
-
-          document.addEventListener('scroll', lazyLoad);
-          window.addEventListener('resize', lazyLoad);
-          window.addEventListener('orientationchange', lazyLoad);
-          lazyLoad(); // Initial check
-        }
       }
 
       // Project Videos
@@ -2615,63 +2509,13 @@
         });
       }
 
-      // Image Sliders
-      function setupImageSliders() {
-        document.querySelectorAll('.project-images-slider').forEach(slider => {
-          const track = slider.querySelector('.slider-track');
-          const prevBtn = slider.querySelector('.slider-prev');
-          const nextBtn = slider.querySelector('.slider-next');
-          const images = slider.querySelectorAll('img');
-          let currentIndex = 0;
-
-          function updateSlider() {
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-          }
-
-          nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateSlider();
-          });
-
-          prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateSlider();
-          });
-
-          // Touch support for mobile
-          let touchStartX = 0;
-          let touchEndX = 0;
-
-          slider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-          });
-
-          slider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-          });
-
-          function handleSwipe() {
-            if (touchEndX < touchStartX - 50) {
-              // Swipe left - next
-              currentIndex = (currentIndex + 1) % images.length;
-            } else if (touchEndX > touchStartX + 50) {
-              // Swipe right - previous
-              currentIndex = (currentIndex - 1 + images.length) % images.length;
-            }
-            updateSlider();
-          }
-        });
-      }
-
-
-
       // WhatsApp Button
       function setupWhatsAppButton() {
         const whatsappBtn = document.createElement('a');
         whatsappBtn.className = 'whatsapp-btn';
         whatsappBtn.href = 'https://wa.me/919022003828';
         whatsappBtn.target = '_blank';
+        whatsappBtn.rel = 'noopener noreferrer';
         whatsappBtn.setAttribute('aria-label', 'Chat on WhatsApp');
         whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
         document.body.appendChild(whatsappBtn);
@@ -2721,7 +2565,8 @@
 
         if (viewMoreBtn && projectsGrid) {
           viewMoreBtn.addEventListener('click', function () {
-            projectsGrid.classList.toggle('show-more');
+            const expanded = projectsGrid.classList.toggle('show-more');
+            this.setAttribute('aria-expanded', String(expanded));
 
             if (projectsGrid.classList.contains('show-more')) {
               this.textContent = 'Show Less';
@@ -2735,17 +2580,144 @@
         }
       }
 
-      // Service Worker
-      function setupServiceWorker() {
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js').then(registration => {
-              console.log('ServiceWorker registration successful');
-            }).catch(err => {
-              console.log('ServiceWorker registration failed: ', err);
-            });
+      function setupPlotListings() {
+        const grid = document.querySelector('.plots-grid');
+        const cards = Array.from(grid.querySelectorAll('.plot-card'));
+        const search = document.getElementById('plot-search');
+        const location = document.getElementById('plot-location-filter');
+        const budget = document.getElementById('plot-budget-filter');
+        const plotSize = document.getElementById('plot-size-filter');
+        const sort = document.getElementById('plot-sort');
+        const resultStatus = document.getElementById('plot-results-status');
+        const comparison = document.getElementById('comparison');
+        const comparisonTable = document.getElementById('comparison-table');
+        const comparisonStatus = document.getElementById('comparison-status');
+        const checkboxes = Array.from(document.querySelectorAll('.compare-checkbox'));
+        const originalOrder = new Map(cards.map((card, index) => [card, index]));
+
+        function applyFilters() {
+          const query = search.value.trim().toLowerCase();
+          const selectedLocation = location.value;
+          const maxRate = Number(budget.value);
+          const selectedSize = Number(plotSize.value);
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const matches = (!query || card.textContent.toLowerCase().includes(query)) &&
+              (!selectedLocation || card.dataset.location === selectedLocation) &&
+              (!maxRate || Number(card.dataset.maxPrice) <= maxRate) &&
+              (!selectedSize || (
+                Number(card.dataset.minSize) <= selectedSize &&
+                Number(card.dataset.maxSize) >= selectedSize
+              ));
+            card.hidden = !matches;
+            if (matches) visibleCount += 1;
           });
+
+          const orderedCards = cards.slice();
+          if (sort.value === 'price-low') {
+            orderedCards.sort((a, b) => Number(a.dataset.minPrice) - Number(b.dataset.minPrice));
+          } else if (sort.value === 'price-high') {
+            orderedCards.sort((a, b) => Number(b.dataset.maxPrice) - Number(a.dataset.maxPrice));
+          } else if (sort.value === 'size-low') {
+            orderedCards.sort((a, b) => Number(a.dataset.minSize) - Number(b.dataset.minSize));
+          } else {
+            orderedCards.sort((a, b) => originalOrder.get(a) - originalOrder.get(b));
+          }
+          orderedCards.forEach((card) => grid.appendChild(card));
+          resultStatus.textContent = `${visibleCount} of ${cards.length} projects match your filters. Rates and availability require confirmation.`;
         }
+
+        function renderComparison() {
+          const selected = checkboxes.filter((checkbox) => checkbox.checked);
+          comparison.hidden = selected.length === 0;
+          comparisonStatus.textContent = selected.length
+            ? `${selected.length} of 3 projects selected.`
+            : 'Select up to three projects to compare.';
+          comparisonTable.replaceChildren();
+          if (selected.length === 0) return;
+
+          const table = document.createElement('table');
+          const head = document.createElement('thead');
+          const headerRow = document.createElement('tr');
+          const firstHeading = document.createElement('th');
+          firstHeading.scope = 'col';
+          firstHeading.textContent = 'Project detail';
+          headerRow.appendChild(firstHeading);
+          const selectedCards = selected.map((checkbox) => checkbox.closest('.plot-card'));
+          selectedCards.forEach((card) => {
+            const heading = document.createElement('th');
+            heading.scope = 'col';
+            heading.textContent = card.dataset.name;
+            headerRow.appendChild(heading);
+          });
+          head.appendChild(headerRow);
+          table.appendChild(head);
+
+          const body = document.createElement('tbody');
+          const rows = [
+            ['Location', (card) => card.dataset.locality],
+            ['Plot sizes', (card) => card.dataset.plotSize],
+            ['Listed rate', (card) => card.dataset.rate],
+            ['Published features', (card) => Array.from(card.querySelectorAll('.plot-detail span')).map((item) => item.textContent.trim()).join(', ')]
+          ];
+          rows.forEach(([label, getValue]) => {
+            const row = document.createElement('tr');
+            const heading = document.createElement('th');
+            heading.scope = 'row';
+            heading.textContent = label;
+            row.appendChild(heading);
+            selectedCards.forEach((card) => {
+              const cell = document.createElement('td');
+              cell.textContent = getValue(card);
+              row.appendChild(cell);
+            });
+            body.appendChild(row);
+          });
+          table.appendChild(body);
+          comparisonTable.appendChild(table);
+        }
+
+        [search, location, budget, plotSize, sort].forEach((control) => {
+          control.addEventListener('input', applyFilters);
+          control.addEventListener('change', applyFilters);
+        });
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('change', () => {
+            const checked = checkboxes.filter((item) => item.checked);
+            if (checked.length > 3) {
+              checkbox.checked = false;
+              comparisonStatus.textContent = 'You can compare up to three projects at a time.';
+              return;
+            }
+            renderComparison();
+          });
+        });
+        document.getElementById('clear-comparison').addEventListener('click', () => {
+          checkboxes.forEach((checkbox) => { checkbox.checked = false; });
+          renderComparison();
+        });
+        applyFilters();
+      }
+
+      function setupInquiryDefaults() {
+        const dateInput = document.getElementById('visit-date');
+        const now = new Date();
+        const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+          .toISOString()
+          .slice(0, 10);
+        dateInput.min = localDate;
+
+        document.querySelectorAll('[data-project]').forEach((link) => {
+          link.addEventListener('click', () => {
+            document.getElementById('interest').value = link.dataset.project;
+          });
+        });
+        document.querySelectorAll('[data-inquiry-message]').forEach((link) => {
+          link.addEventListener('click', () => {
+            document.getElementById('message').value = link.dataset.inquiryMessage;
+          });
+        });
       }
 
       // Public API
@@ -2759,7 +2731,6 @@
   </script>
 
   <!-- Deferred JavaScript -->
-  <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>

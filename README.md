@@ -17,8 +17,20 @@ The site includes a strong property presentation layer with:
 - premium landing-page design
 - multiple project-specific detail pages
 - property pricing and plot-size highlights
-- infrastructure and legal assurance messaging
-- lead-generation buttons for inquiries and site visits
+- searchable, filterable plot listings and side-by-side comparison
+- project locality links, brochures where available, and site-visit inquiries
+- buyer due-diligence guidance and a privacy notice
+
+## Customer Features
+
+- Filter the featured projects by name, locality, published rate, and listed plot size; sort by rate or plot size.
+- Select up to three projects to compare their published location, sizes, rates, and features.
+- Use locality-level map searches. These do not identify exact plot boundaries; request a confirmed site pin from the business.
+- Choose a project and preferred site-visit date in the inquiry form. It opens a prefilled WhatsApp draft; the visitor must review and send it.
+- Read the [Privacy Notice](privacy-policy.html) before sharing inquiry details.
+- Request current inventory, dated written pricing, and plot-specific legal/approval documents directly. The site does not validate or guarantee those documents.
+
+The website is static: inquiries are not saved to a website backend, availability is not live, and prices/fees must be confirmed. Only the Gurudatta Park brochure is currently linked from the listings. Project-specific legal records, exact directions, and independently verifiable customer references need to be supplied and maintained by the business.
 
 ## Featured Projects
 
@@ -46,7 +58,8 @@ This project is crafted to support real-estate sales and engagement by emphasizi
 - Fully responsive real-estate landing page
 - Modern UI with premium property branding
 - Detailed project pages with amenities and plot specifications
-- Strong CTA flow for site visits and consultations
+- Search, filtering, comparison, and a WhatsApp-based inquiry flow
+- Responsive buyer checklist and privacy disclosure
 - Clean static architecture for easy deployment and maintenance
 - Optimized for lead generation and brochure-style marketing
 
@@ -71,13 +84,19 @@ RD-Estate/
 ├── vasant-a.html              # Vasant Park project page
 ├── vasant.html                # Vasant Park project page
 ├── vasant2.html               # Secondary Vasant development page
-├── Gurudatta-Park-Broucher.pdf
-├── rd-logo.png
-├── *.JPG / *.jpg / *.png / *.MP4
+├── privacy-policy.html
+├── assets/
+│   ├── images/                # Project photos, logos, and graphics
+│   └── videos/                # Project videos
+├── documents/
+│   └── Gurudatta-Park-Broucher.pdf
 ├── README.md
-├── .gitignore
+├── .gitattributes
 └── .vscode/
 ```
+
+HTML pages remain in the repository root to keep their existing page URLs working. Media and the brochure are stored in the folders above; asset URLs now use those paths.
+Page-specific CSS and JavaScript remain inline in their HTML files; extracting and consolidating those would be a separate refactor.
 
 ## Getting Started
 
