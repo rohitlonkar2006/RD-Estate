@@ -200,47 +200,16 @@
       margin-right: auto;
     }
 
-    /* Update the header/navbar background color */
-    .header {
-      background-color: #8C6C3F;
-      /* This is the color from your navbar text, adjust if needed */
-    }
-
-    /* Update the navbar link colors for better contrast */
-    .navbar-link {
-      color: #FFFFFF;
-      /* White text for better contrast */
-    }
-
-    .navbar-link:hover,
-    .navbar-link.active {
-      color: #F8F9FA;
-      /* Slightly lighter white on hover/active */
-    }
-
-    .navbar-link::after {
-      background: #F8F9FA;
-      /* Light color for the underline */
-    }
-
-    /* Update the menu toggle color for mobile */
-    .menu-toggle i {
-      color: #FFFFFF;
-    }
-
-    /* Header */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100px;
+      height: 94px;
       z-index: 1000;
-      padding: 0;
-      transition: all 0.3s ease;
-      background-color: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 1px 0 rgba(26, 61, 39, 0.08);
       display: flex;
       align-items: center;
     }
@@ -256,70 +225,98 @@
       width: 100%;
       height: 100%;
       padding: 0 var(--space-md);
+      gap: 1.5rem;
     }
 
-    .logo {
+    .brand-link {
       display: flex;
       align-items: center;
-      height: 80px;
-      padding: 0;
-      margin: 0;
+      gap: 14px;
+      text-decoration: none;
+      color: #23462b;
+      min-width: 0;
     }
 
-    .logo img {
-      height: 80px;
-      width: auto;
-      display: block;
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border: 3px solid #1d5634;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #fff;
+      box-shadow: inset 0 0 0 2px rgba(29, 86, 52, 0.08);
     }
 
-    @media (max-width: 768px) {
-      .logo {
-        height: 60px;
-      }
-
-      .logo img {
-        height: 60px;
-      }
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 2px solid rgba(29, 86, 52, 0.2);
+      border-radius: 8px;
     }
 
-    /* Mobile menu toggle */
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      z-index: 1001;
-      border: 0;
-      padding: var(--space-xs);
-      background: transparent;
+    .brand-mark span {
+      position: relative;
+      z-index: 1;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.08em;
+      color: #1d5634;
     }
 
-    .menu-toggle i {
-      font-size: 1.5rem;
-      color: var(--secondary);
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
     }
 
-    :focus-visible {
-      outline: 3px solid #1B5E20;
-      outline-offset: 3px;
+    .brand-name {
+      font-size: clamp(1.3rem, 2vw, 2.05rem);
+      font-weight: 700;
+      color: #1d5634;
+      letter-spacing: -0.04em;
     }
 
-    /* Navigation */
+    .brand-subtitle {
+      margin-top: 0.1rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4d7a59;
+      font-weight: 700;
+    }
+
+    .brand-subtitle strong {
+      font-weight: 700;
+    }
+
     .navbar {
       display: flex;
       align-items: center;
-      color: #8C6C3F;
+      justify-content: center;
+      flex: 1;
     }
 
     .navbar-list {
       display: flex;
+      align-items: center;
+      justify-content: center;
       list-style: none;
-      gap: var(--space-md);
+      gap: clamp(1.2rem, 2vw, 2.5rem);
+      padding: 0;
+      margin: 0;
     }
 
     .navbar-link {
-      color: var(--secondary);
+      color: #1d221e;
+      font-size: 1.02rem;
       font-weight: 600;
-      padding: var(--space-xs) 0;
+      padding: 0.55rem 0;
       position: relative;
+      line-height: 1.2;
     }
 
     .navbar-link::after {
@@ -327,10 +324,10 @@
       position: absolute;
       width: 0;
       height: 2px;
-      background: var(--primary);
-      bottom: 0;
+      background: #1d5634;
+      bottom: -0.2rem;
       left: 0;
-      transition: width 0.3s ease;
+      transition: width 0.25s ease;
     }
 
     .navbar-link:hover::after,
@@ -340,64 +337,227 @@
 
     .navbar-link:hover,
     .navbar-link.active {
-      color: var(--primary);
+      color: #2a7c4a;
     }
 
-    /* Mobile call button */
-    .call-float {
-      position: fixed;
-      bottom: var(--space-md);
-      right: var(--space-md);
-      z-index: 999;
-      display: none;
-      background-color: var(--success);
-      color: var(--white);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+    .phone-pill {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow-lg);
-      transition: all 0.3s ease;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #1c7c46, #2fa267);
+      color: #fff;
+      border-radius: 14px;
+      padding: 0.8rem 1.05rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 18px rgba(26, 122, 72, 0.2);
+      white-space: nowrap;
+    }
+
+    .phone-pill i {
+      font-size: 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      z-index: 1001;
+      border: 0;
+      padding: 0.3rem;
+      background: transparent;
+    }
+
+    .menu-toggle i {
+      font-size: 1.5rem;
+      color: #1d5634;
+    }
+
+    .call-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1c7c46, #2fa267);
+      color: #fff;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      box-shadow: 0 18px 28px rgba(36, 124, 73, 0.26);
+      transition: transform 0.25s ease;
     }
 
     .call-float:hover {
-      transform: scale(1.1);
-      background-color: #0277BD;
+      transform: scale(1.08);
     }
 
     .call-float i {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 
-    /* Hero section */
     .hero {
-      height: 100vh;
-      min-height: 600px;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/vasant2-p.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      padding-top: 110px;
+      background: linear-gradient(rgba(13, 17, 16, 0.56), rgba(13, 17, 16, 0.68)), url('assets/images/vasant2-p.jpg') center center/cover no-repeat;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
-      color: var(--white);
+      color: #fff;
       text-align: center;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .hero-inner {
+      max-width: 1100px;
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .hero h1 {
-      margin-bottom: var(--space-md);
-      animation: fadeInDown 1s ease;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(15, 91, 63, 0.65);
+      border: 1px solid rgba(110, 221, 182, 0.6);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.15rem;
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      margin-bottom: var(--space-lg);
-      animation: fadeInUp 1s ease;
+    .hero-badge i {
+      color: #71e0ba;
+      font-size: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      line-height: 0.96;
+      margin-bottom: 1.2rem;
+      color: #fff;
+      max-width: 1000px;
+      letter-spacing: -0.06em;
+    }
+
+    .hero-title .accent {
+      display: block;
+      color: #4fe0ab;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-subtitle {
+      max-width: 980px;
+      margin: 0 auto 2rem;
+      font-size: clamp(1.2rem, 2vw, 2.2rem);
+      line-height: 1.42;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .category-panel {
+      width: min(620px, 100%);
+      background: rgba(17, 27, 29, 0.56);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 1.2rem 1.3rem 1.35rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .category-heading {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      min-height: 90px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      padding: 1rem 1.1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .category-card:hover,
+    .category-card.active {
+      background: linear-gradient(135deg, rgba(43, 188, 123, 0.92), rgba(25, 132, 88, 0.96));
+      border-color: rgba(186, 255, 228, 0.7);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 18px rgba(9, 77, 50, 0.2);
+    }
+
+    .category-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .category-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .category-copy strong {
+      font-size: 1.02rem;
+      line-height: 1.2;
+    }
+
+    .category-copy small {
+      font-size: 0.76rem;
+      opacity: 0.88;
+      margin-top: 0.15rem;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background: linear-gradient(135deg, #2bc56c, #1e9f5c);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      min-width: 320px;
+      box-shadow: 0 14px 26px rgba(29, 130, 74, 0.34);
+      transition: transform 0.25s ease;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .cta-primary i {
+      font-size: 1.4rem;
     }
 
     .hero-buttons {
@@ -406,6 +566,244 @@
       gap: var(--space-md);
       flex-wrap: wrap;
       animation: fadeIn 1.5s ease;
+    }
+
+    .layout-section {
+      background: #f5f5f3;
+      padding: 5.5rem 0 4rem;
+    }
+
+    .layout-section .section-title {
+      color: #1f2523;
+      margin-bottom: 0.8rem;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+    }
+
+    .layout-section .section-title::after {
+      background: #2c7d4b;
+    }
+
+    .layout-section .section-subtitle {
+      color: #5c5c5c;
+      margin-bottom: 2.8rem;
+      font-size: 1.1rem;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .layout-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(28, 79, 51, 0.09);
+    }
+
+    .layout-visual {
+      position: relative;
+      min-height: 290px;
+      padding: 1.25rem 1.25rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .layout-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(12, 17, 18, 0.42));
+    }
+
+    .layout-visual > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .layout-visual--hills {
+      background-image: linear-gradient(135deg, rgba(34, 59, 49, 0.18), rgba(20, 20, 20, 0.1)), url('assets/images/vasant2-p3.png');
+    }
+
+    .layout-visual--meadows {
+      background-image: linear-gradient(135deg, rgba(34, 59, 49, 0.18), rgba(20, 20, 20, 0.1)), url('assets/images/ramdara-2.JPG');
+    }
+
+    .layout-badge {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: rgba(39, 131, 85, 0.9);
+      border: 1px solid rgba(179, 255, 217, 0.6);
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .layout-name {
+      font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: #e7fff2;
+      margin-bottom: 0.25rem;
+    }
+
+    .layout-meta {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.8rem;
+    }
+
+    .layout-price {
+      font-size: clamp(1.8rem, 2vw, 2.5rem);
+      font-weight: 800;
+      color: #7df2be;
+      letter-spacing: -0.04em;
+    }
+
+    .layout-info {
+      padding: 1.5rem 1.5rem 1.2rem;
+    }
+
+    .layout-info h3 {
+      font-size: clamp(1.8rem, 2vw, 2.3rem);
+      margin-bottom: 0.55rem;
+      color: #1e2626;
+      letter-spacing: -0.04em;
+    }
+
+    .location-line {
+      color: #4d5354;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .location-line i {
+      color: #2a7d4d;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 0 0 1.2rem;
+      padding: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      color: #374242;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .feature-list li i {
+      color: #2a7d4d;
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+    }
+
+    .layout-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .layout-actions .btn {
+      flex: 1 1 200px;
+      min-height: 52px;
+      font-size: 0.95rem;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+
+    .layout-actions .btn-primary {
+      background: linear-gradient(135deg, #2bc56c, #1f9d60);
+      color: #fff;
+    }
+
+    .layout-actions .btn-secondary {
+      border: 1px solid rgba(29, 86, 52, 0.35);
+      background: #fff;
+      color: #1d5634;
+    }
+
+    @media (max-width: 900px) {
+      .header-container {
+        gap: 0.8rem;
+      }
+
+      .navbar {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand-copy {
+        display: none;
+      }
+
+      .header {
+        height: 82px;
+      }
+
+      .phone-pill {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero-badge {
+        font-size: 0.88rem;
+        padding: 0.6rem 0.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.15rem;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-primary {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .layout-actions {
+        flex-direction: column;
+      }
     }
 
     /* Services highlight */
@@ -1594,24 +1992,25 @@
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
-      <a href="index.html" class="logo">
-        <img src="assets/images/rd-logo.png" alt="RD Estate" width="160" height="48">
+      <a href="index.html" class="brand-link" aria-label="RD Estate home">
+        <span class="brand-mark"><span>RD</span></span>
+        <span class="brand-copy">
+          <span class="brand-name">RD Estate</span>
+          <span class="brand-subtitle">By <strong>Kshitij Realty</strong></span>
+        </span>
       </a>
 
       <nav class="navbar" id="site-navigation" aria-label="Main navigation">
         <ul class="navbar-list">
           <li><a href="#home" class="navbar-link active">Home</a></li>
-          <li><a href="#about" class="navbar-link">About Us</a></li>
           <li><a href="#plots" class="navbar-link">Available Plots</a></li>
-          <li><a href="#process" class="navbar-link">Our Process</a></li>
-
-          <li><a href="#locations" class="navbar-link">Locations</a></li>
-          <li><a href="#documents" class="navbar-link">Buyer Checklist</a></li>
-
-          <li><a href="#testimonials" class="navbar-link">Customer references</a></li>
+          <li><a href="#projects" class="navbar-link">Completed Projects</a></li>
+          <li><a href="#about" class="navbar-link">About Us</a></li>
           <li><a href="#contact" class="navbar-link">Contact</a></li>
         </ul>
       </nav>
+
+      <a href="tel:+91992242225" class="phone-pill"><i class="fa-solid fa-phone"></i> 99220 42225</a>
 
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false">
         <i class="fas fa-bars"></i>
@@ -1619,21 +2018,39 @@
     </div>
   </header>
 
-  <!-- Floating call button (mobile) -->
-  <a href="tel:+917758003828" class="call-float">
-    <i class="fas fa-phone"></i>
+  <a href="https://wa.me/91992242225" class="call-float" aria-label="Contact on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- Hero Section -->
   <main id="main-content">
   <section class="hero" id="home">
-    <div class="hero-content container">
-      <h1>Premium Land Plots in Prime Pune Locations</h1>
-      <p>Explore residential plot projects around Pune, review the details published for each one, and contact the team to confirm current availability, pricing, and documentation.</p>
-      <div class="hero-buttons">
-        <a href="#plots" class="btn btn-primary">View Available Plots</a>
-        <a href="#contact" class="btn btn-secondary">Get Free Consultation</a>
+    <div class="container hero-inner">
+      <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> 100% Clear Title (7/12) • Zero Brokerage</div>
+      <h1 class="hero-title">Plots in East Pune <span class="accent">from ₹25 Lakhs</span></h1>
+      <p class="hero-subtitle">Residential NA &amp; Bungalow Plots in Hadapsar • Loni Kalbhor • Uruli with ready tar roads, water &amp; individual 7/12 extract.</p>
+
+      <div class="category-panel" aria-label="Select plot category">
+        <div class="category-heading">Select your plot category:</div>
+        <div class="category-grid">
+          <button class="category-card active" type="button">
+            <span class="category-icon">🏡</span>
+            <span class="category-copy">
+              <strong>Residential NA</strong>
+              <small>From ₹25 Lakhs</small>
+            </span>
+          </button>
+          <button class="category-card" type="button">
+            <span class="category-icon">🏡</span>
+            <span class="category-copy">
+              <strong>Farmhouse Plot</strong>
+              <small>11 Guntha @ ₹255L</small>
+            </span>
+          </button>
+        </div>
       </div>
+
+      <a href="https://wa.me/91992242225" class="cta-primary"><i class="fa-brands fa-whatsapp"></i> Get Price Sheet on WhatsApp</a>
     </div>
   </section>
 
@@ -1688,198 +2105,56 @@
     </div>
   </section>
   <!-- Plots Availability Section -->
-  <section class="plots-availability" id="plots">
+  <section class="layout-section" id="plots">
     <div class="container">
-      <h2 class="section-title">Featured Plot Projects</h2>
-      <p class="section-subtitle">Browse the projects and compare the details currently published on this site.</p>
+      <h2 class="section-title">Available Investment Layouts</h2>
+      <p class="section-subtitle">Ready possession with separate 7/12 extract &amp; 40ft wide tar roads.</p>
 
-      <div class="listing-tools" aria-label="Filter available plots">
-        <label for="plot-search">Search projects
-          <input id="plot-search" type="search" placeholder="Project or locality">
-        </label>
-        <label for="plot-location-filter">Location
-          <select id="plot-location-filter">
-            <option value="">All locations</option>
-            <option value="bhekrai">Bhekrai Nagar / Hadapsar</option>
-            <option value="loni">Loni Kalbhor</option>
-          </select>
-        </label>
-        <label for="plot-budget-filter">Maximum listed rate
-          <select id="plot-budget-filter">
-            <option value="">Any rate</option>
-            <option value="1000">Up to ₹1,000/sq.ft.</option>
-            <option value="2500">Up to ₹2,500/sq.ft.</option>
-            <option value="3000">Up to ₹3,000/sq.ft.</option>
-          </select>
-        </label>
-        <label for="plot-size-filter">Plot size includes
-          <select id="plot-size-filter">
-            <option value="">Any size</option>
-            <option value="1000">1,000 sq.ft.</option>
-            <option value="1500">1,500 sq.ft.</option>
-            <option value="2000">2,000 sq.ft.</option>
-          </select>
-        </label>
-        <label for="plot-sort">Sort by
-          <select id="plot-sort">
-            <option value="default">Featured</option>
-            <option value="price-low">Lowest listed rate</option>
-            <option value="price-high">Highest listed rate</option>
-            <option value="size-low">Smallest plot first</option>
-          </select>
-        </label>
+      <div class="layout-grid">
+        <article class="layout-card">
+          <div class="layout-visual layout-visual--hills">
+            <span class="layout-badge">11 Guntha • Ready Farmhouse</span>
+            <div class="layout-name">सह्याद्री हिल्स</div>
+            <div class="layout-meta">Location - Mhatobachi Alandi</div>
+            <div class="layout-price">₹55 Lakhs</div>
+          </div>
+          <div class="layout-info">
+            <h3>Sahyadri Hills</h3>
+            <p class="location-line"><i class="fa-solid fa-location-dot"></i> Mhatobachi Alandi</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> 100% Clear Title • Ready 7/12 extract</li>
+              <li><i class="fa-solid fa-circle-check"></i> 40ft internal tar roads &amp; water lines</li>
+              <li><i class="fa-solid fa-circle-check"></i> 11 Guntha Plot + Ready Farmhouse</li>
+            </ul>
+            <div class="layout-actions">
+              <a href="https://wa.me/91992242225" class="btn btn-primary">Get Layout &amp; 7/12 on WhatsApp</a>
+              <a href="vasant-a.html" class="btn btn-secondary">View Full Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="layout-card">
+          <div class="layout-visual layout-visual--meadows">
+            <span class="layout-badge">New Launch</span>
+            <div class="layout-name">Sai Meadows</div>
+            <div class="layout-meta">Loni Kalbhor (Near Solarpur Highway)</div>
+            <div class="layout-price">From ₹25L</div>
+          </div>
+          <div class="layout-info">
+            <h3>Sai Meadows</h3>
+            <p class="location-line"><i class="fa-solid fa-location-dot"></i> Loni Kalbhor (Near Solapur Highway)</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> 100% Clear Title • Ready 7/12 extract</li>
+              <li><i class="fa-solid fa-circle-check"></i> 40ft internal tar roads &amp; water lines</li>
+              <li><i class="fa-solid fa-circle-check"></i> 1,000 to 3,000 sq.ft. NA plots</li>
+            </ul>
+            <div class="layout-actions">
+              <a href="https://wa.me/91992242225" class="btn btn-primary">Get Layout &amp; 7/12 on WhatsApp</a>
+              <a href="ramdara.html" class="btn btn-secondary">View Full Details</a>
+            </div>
+          </div>
+        </article>
       </div>
-      <p id="plot-results-status" class="plot-availability-note" role="status" aria-live="polite"></p>
-
-      <div class="plots-grid">
-        <div class="plot-card" data-name="Vasant Park" data-location="bhekrai" data-locality="Bhekrai Nagar (near Hadapsar)" data-rate="₹2,000–₹2,500/sq.ft." data-plot-size="1,000–2,000 sq.ft." data-min-price="2000" data-max-price="2500" data-min-size="1000" data-max-size="2000">
-          <div class="plot-image">
-            <img src="assets/images/vasant.JPG" alt="Vasant Park plotted development" loading="lazy">
-            <div class="plot-badge">Ask for availability</div>
-          </div>
-          <div class="plot-content">
-            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="vasant-park"> Add to comparison</label>
-            <h3>Vasant Park</h3>
-            <div class="plot-details">
-              <div class="plot-detail">
-                <i class="fas fa-ruler-combined"></i>
-                <span>1000-2000 sq.ft.</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-road"></i>
-                <span>40ft Road</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-tint"></i>
-                <span>Water Supply</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-bolt"></i>
-                <span>Electricity</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Bhekrai nagar <br>(Near Hadpsar) </span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-school"></i>
-                <span>Near International<br>Schools</span>
-              </div>
-            </div>
-            <div class="plot-price">₹2,000 - ₹2,500/sq.ft.</div>
-            <div class="plot-actions">
-              <a href="#contact" class="btn btn-primary" data-project="Vasant Park">Book Site Visit</a>
-              <a href="vasant-a.html" class="btn btn-secondary">Know more</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="plot-card" data-name="Mayuresh Park" data-location="loni" data-locality="Near Ramdara, Loni Kalbhor" data-rate="₹750–₹800/sq.ft." data-plot-size="1,000–1,500 sq.ft." data-min-price="750" data-max-price="800" data-min-size="1000" data-max-size="1500">
-          <div class="plot-image">
-            <img src="assets/images/ramdara.JPG" alt="Mayuresh Park plotted development" loading="lazy">
-            <div class="plot-badge">Ask for availability</div>
-          </div>
-          <div class="plot-content">
-            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="mayuresh-park"> Add to comparison</label>
-            <h3>Mayuresh Park</h3>
-            <div class="plot-details">
-              <div class="plot-detail">
-                <i class="fas fa-ruler-combined"></i>
-                <span>1000-1500 sq.ft.</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-road"></i>
-                <span>40ft Road</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-tint"></i>
-                <span>Water Supply</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-train"></i>
-                <span>Railway station </span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-peace"></i>
-                <span>peaceful spot </span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-archway"></i>
-                <span>Temple </span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Near Ramdara(Loni Kalbhor) </span>
-              </div>
-            </div>
-            <div class="plot-price">₹750 - ₹800/sq.ft.</div>
-            <div class="plot-actions">
-              <a href="#contact" class="btn btn-primary" data-project="Mayuresh Park">Book Site Visit</a>
-              <a href="ramdara.html" class="btn btn-secondary">Know more</a>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="plot-card" data-name="Gurudatta Park" data-location="bhekrai" data-locality="Bhekrai Nagar (near Hadapsar)" data-rate="₹2,400–₹3,000/sq.ft." data-plot-size="1,000–1,500 sq.ft." data-min-price="2400" data-max-price="3000" data-min-size="1000" data-max-size="1500">
-          <div class="plot-image">
-            <a href="gurudatta.html">
-              <img src="assets/images/gurudatta.jpg" alt="Gurudatta Park plotted development" loading="lazy">
-            </a>
-            <div class="plot-badge">Ask for availability</div>
-          </div>
-          <div class="plot-content">
-            <label class="compare-control"><input class="compare-checkbox" type="checkbox" value="gurudatta-park"> Add to comparison</label>
-            <h3>Gurudatta Park</h3>
-            <div class="plot-details">
-              <div class="plot-detail">
-                <i class="fas fa-ruler-combined"></i>
-                <span>1000-1500 sq.ft.</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-road"></i>
-                <span>40ft Road</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-tint"></i>
-                <span>Water Supply</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-bolt"></i>
-                <span>Electricity</span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Bhekrai nagar <br>(Near Hadpsar) </span>
-              </div>
-              <div class="plot-detail">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>10km distance<br>from Pune city</span>
-              </div>
-
-            </div>
-            <div class="plot-price">₹2,400 - ₹3,000/sq.ft.</div>
-            <div class="plot-actions">
-              <a href="#contact" class="btn btn-primary" data-project="Gurudatta Park">Book Site Visit</a>
-              <a href="documents/Gurudatta-Park-Broucher.pdf" class="btn btn-secondary" download>Download Brochure</a>
-              <a href="gurudatta.html" class="btn btn-outline">Project details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="container plot-availability-note">Prices and availability are shown as published and may change; no last-verified date is supplied. Confirm the current rate, inventory, included charges, and terms directly before making a decision.</p>
-    <div class="container comparison-panel" id="comparison" hidden>
-      <h3>Compare selected projects</h3>
-      <div id="comparison-table"></div>
-      <p id="comparison-status" class="comparison-status" role="status" aria-live="polite">Select up to three projects to compare.</p>
-      <button class="btn btn-outline" id="clear-comparison" type="button">Clear comparison</button>
-    </div>
-    <div style="text-align: center; margin-top: var(--space-xl);">
-      <a href="#contact" class="btn btn-primary">Get Complete Plot List</a>
-    </div>
     </div>
   </section>
 
@@ -2582,7 +2857,11 @@
 
       function setupPlotListings() {
         const grid = document.querySelector('.plots-grid');
+        if (!grid) return;
+
         const cards = Array.from(grid.querySelectorAll('.plot-card'));
+        if (!cards.length) return;
+
         const search = document.getElementById('plot-search');
         const location = document.getElementById('plot-location-filter');
         const budget = document.getElementById('plot-budget-filter');
